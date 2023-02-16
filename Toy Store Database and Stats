@@ -1,0 +1,25 @@
+
+-- Create a toy store database --
+
+CREATE TABLE toystore (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, aisle INTEGER);
+
+INSERT INTO toystore VALUES 
+(1001, 'The Rock', 12.99, 4),
+(1002, 'Stone Cold Steve Austin', 12.99, 4),
+(1003, ' Triple H', 11.49,4),
+(1004, 'Vince McMahon', 9.97, 4),
+(1005, 'Hulk Hogan', 2.77, 4),
+(1006, 'Barbie', 6.54, 3),
+(1007, 'Ken', 7.85, 3),
+(1008, 'Barbie Dream House', 54.26, 3),
+(1009, 'Ken Dream Car', 25.63, 3),
+(1010, 'Yo Yo', 1.99, 6),
+(1011, 'Bopit', 16.57, 8),
+(1012, 'Uno', 5.99, 7),
+(1013, 'Gigapet', 36.89, 2),
+(1014, 'Transformers', 22.86, 5),
+(1015, 'Loki of Asgard', 31.99, 5);
+
+-- what is the average price of your toy inventory? --
+
+SELECT AVG(price) FROM toystore;
