@@ -1,0 +1,52 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT TOP (1000) [age]
+      ,[sex]
+      ,[bmi]
+      ,[children]
+      ,[smoker]
+      ,[region]
+      ,[charges]
+  FROM [PortfolioProjects].[dbo].[healthinsurance]
+
+  -- Exploring Average Health Insurance Cost by Sex
+
+  Select sex, AVG(charges) as CostbyGender
+  From healthinsurance
+  Group by sex
+  
+  -- Exploring BMI impacts on charges by region --
+
+  Select bmi, region, charges
+  FROM healthinsurance
+  order by region
+ 
+ -- Review entire Health insurance table
+
+ Select *
+ From healthinsurance
+
+ -- Looking at how many females smokers are above age 25
+
+ Select Count (smoker) as 'Womensmokers'
+ FROM healthinsurance
+ Where age >= '25' AND sex = 'female'
+
+ -- Quick calculations -- 
+
+ Select AVG(age)
+ FROM healthinsurance
+
+ Select Max(age)
+ From healthinsurance
+
+ Select Min(age)
+ From healthinsurance
+
+ Select *
+ From healthinsurance
+ Where sex = 'Male' AND Children > '2'
+ ORDER BY bmi
+
+ Select avg(bmi)
+ From healthinsurance
+ Where sex = 'female'
